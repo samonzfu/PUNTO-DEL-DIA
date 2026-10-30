@@ -1,0 +1,3 @@
+Se trata de una aplicación web multiplataforma (Single Page Application - SPA) diseñada bajo un enfoque responsive, lo que permite utilizarla cómodamente tanto desde un navegador web de escritorio como desde dispositivos móviles y tablets. Además, está preparada para ser instalada directamente en el dispositivo como una PWA (Progressive Web App), ofreciendo la experiencia de una app nativa sin complicar la distribución.
+
+EN PROCESO.
