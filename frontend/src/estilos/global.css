@@ -1,0 +1,149 @@
+/* ===== Colores: modo claro por defecto, modo oscuro según el dispositivo ===== */
+:root {
+  --fondo: #F6FAFE;
+  --superficie: #FFFFFF;
+  --texto: #0F2A43;
+  --texto-sec: #2B4660;
+  --placeholder: #5B7389;
+  --borde: #D6E8F5;
+  --borde-input: #8FAFC8;
+  --enlace: #0369A1;
+  --anillo: #BFE3FA;
+  --error: #C0392B;
+  --panel: #E3F2FD;
+  --panel-texto: #0F2A43;
+  --panel-texto-sec: #2B4660;
+  --boton: #38BDF8;
+  --boton-texto: #0F2A43;
+  --check-fondo: #38BDF8;
+  --check-trazo: #0F2A43;
+  --logo-baldosa: #38BDF8;
+  --logo-circulo: #7CCBF8;
+  --logo-casa: #FFFFFF;
+  --logo-punto: #0369A1;
+}
+
+@media (prefers-color-scheme: dark) {
+  :root {
+    --fondo: #0A1624;
+    --superficie: #12253A;
+    --texto: #EAF3FB;
+    --texto-sec: #9DB5CB;
+    --placeholder: #9DB5CB;
+    --borde: #23405C;
+    --borde-input: #6C8CAA;
+    --enlace: #7CC0F0;
+    --anillo: #4A9FE0;
+    --error: #F28B82;
+    --panel: #7CC0F0;
+    --panel-texto: #0A1624;
+    --panel-texto-sec: #0A1624;
+    --boton: #7CC0F0;
+    --boton-texto: #0A1624;
+    --check-fondo: #0A1624;
+    --check-trazo: #7CC0F0;
+    --logo-baldosa: #0A1624;
+    --logo-circulo: #12253A;
+    --logo-casa: #7CC0F0;
+    --logo-punto: #0A1624;
+  }
+}
+
+/* ===== Base ===== */
+* { box-sizing: border-box; }
+body {
+  margin: 0;
+  font-family: 'Manrope', system-ui, sans-serif;
+  background: var(--fondo);
+  color: var(--texto);
+}
+a { color: var(--enlace); font-weight: 600; }
+a:hover { text-decoration: none; }
+
+/* ===== Logo y check (SVG) ===== */
+.logo-baldosa { fill: var(--logo-baldosa); }
+.logo-circulo { fill: var(--logo-circulo); }
+.logo-casa { fill: var(--logo-casa); }
+.logo-punto { fill: var(--logo-punto); }
+.check-fondo { fill: var(--check-fondo); }
+.check-trazo { stroke: var(--check-trazo); }
+
+/* ===== Pantallas de acceso (login y registro) ===== */
+.pagina-auth {
+  min-height: 100vh;
+  display: flex;
+  flex-wrap: wrap;
+}
+
+.panel-marca {
+  flex: 1 1 420px;
+  background: var(--panel);
+  color: var(--panel-texto);
+  padding: 64px 56px;
+  display: flex;
+  flex-direction: column;
+  justify-content: space-between;
+  gap: 40px;
+}
+.panel-marca__logo { display: flex; align-items: center; gap: 14px; font-size: 26px; font-weight: 800; }
+.panel-marca h1 { margin: 0 0 16px; font-size: 40px; line-height: 1.15; font-weight: 800; }
+.panel-marca p { margin: 0; font-size: 18px; line-height: 1.55; color: var(--panel-texto-sec); max-width: 460px; }
+.panel-marca__puntos { list-style: none; margin: 0; padding: 0; display: flex; flex-direction: column; gap: 14px; }
+.panel-marca__puntos li { display: flex; align-items: center; gap: 12px; font-size: 16px; }
+
+.zona-form {
+  flex: 1 1 420px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  padding: 48px 32px;
+}
+
+.tarjeta {
+  width: 100%;
+  max-width: 440px;
+  background: var(--superficie);
+  border: 1px solid var(--borde);
+  border-radius: 16px;
+  padding: 40px;
+  box-shadow: 0 8px 24px rgba(15, 42, 67, 0.06);
+}
+.tarjeta h2 { margin: 0 0 6px; font-size: 28px; font-weight: 800; }
+.tarjeta__sub { margin: 0 0 28px; font-size: 15px; color: var(--texto-sec); }
+.tarjeta__pie { margin: 24px 0 0; font-size: 15px; color: var(--texto-sec); text-align: center; }
+
+/* ===== Formularios ===== */
+.campos { display: flex; flex-direction: column; gap: 18px; }
+.fila { display: flex; flex-wrap: wrap; gap: 14px; }
+.fila > div { flex: 1 1 150px; }
+
+label { display: block; font-size: 14px; font-weight: 600; color: var(--texto-sec); margin-bottom: 6px; }
+input {
+  width: 100%;
+  height: 46px;
+  padding: 0 14px;
+  font: inherit;
+  font-size: 15px;
+  color: var(--texto);
+  background: var(--superficie);
+  border: 1px solid var(--borde-input);
+  border-radius: 10px;
+}
+input::placeholder { color: var(--placeholder); }
+input:focus { outline: 3px solid var(--anillo); border-color: var(--enlace); }
+
+.boton {
+  width: 100%;
+  height: 48px;
+  margin-top: 8px;
+  border: 0;
+  border-radius: 10px;
+  background: var(--boton);
+  color: var(--boton-texto);
+  font: inherit;
+  font-size: 16px;
+  font-weight: 800;
+  cursor: pointer;
+}
+.boton:focus-visible { outline: 3px solid var(--anillo); outline-offset: 2px; }
+.error { margin: 0; font-size: 14px; font-weight: 600; color: var(--error); }
